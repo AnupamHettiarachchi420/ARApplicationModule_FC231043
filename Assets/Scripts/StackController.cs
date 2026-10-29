@@ -35,6 +35,8 @@ public class StackController : MonoBehaviour
         "stack.Peek();"
     };
 
+    public bool IsBusy => busy;
+
     private void Start()
     {
         cam = Camera.main;
@@ -55,51 +57,97 @@ public class StackController : MonoBehaviour
             Quaternion.LookRotation(topMarker.transform.position - cam.transform.position);
     }
 
-    // ---------- Button actions ----------
+    // ---------- Button actions (Free mode buttons use these) ----------
 
-    public void Push()
+    public void Push() { TryPush(nextValue); }
+    public void Pop() { TryPop(); }
+    public void Peek() { TryPeek(); }
+
+    // ---------- Operations that report success (the stepper uses these) ----------
+
+    public bool TryPush(int value)
     {
-        if (busy) return;
+        if (busy) return false;
         ShowCode(0);
         if (items.Count >= maxSize)
         {
             SetStatus("Stack overflow! The stack is full (max " + maxSize + ").", Red);
-            return;
+            return false;
         }
-        StartCoroutine(PushRoutine());
+        nextValue = Mathf.Max(nextValue, value + 1);
+        StartCoroutine(PushRoutine(value));
+        return true;
     }
 
-    public void Pop()
+    public bool TryPop()
     {
-        if (busy) return;
+        if (busy) return false;
         ShowCode(1);
         if (items.Count == 0)
         {
             SetStatus("Stack underflow! The stack is empty.", Red);
-            return;
+            return false;
         }
         StartCoroutine(PopRoutine());
+        return true;
     }
 
-    public void Peek()
+    public bool TryPeek()
     {
-        if (busy) return;
+        if (busy) return false;
         ShowCode(2);
         if (items.Count == 0)
         {
             SetStatus("Nothing to peek. The stack is empty.", Red);
-            return;
+            return false;
         }
         StartCoroutine(PeekRoutine());
+        return true;
     }
+
+    // ---------- Instant changes (used by Back and Reset) ----------
+
+    public void PushInstant(int value)
+    {
+        int index = items.Count;
+        GameObject block = CreateBlock(value, index);
+        block.transform.localPosition = SlotPosition(index);
+        block.transform.localScale = Vector3.one * blockSize;
+        items.Push((block, value));
+        UpdateMarker();
+    }
+
+    public void PopInstant()
+    {
+        if (items.Count == 0) return;
+        var (block, _) = items.Pop();
+        Destroy(block);
+        UpdateMarker();
+    }
+
+    public void ClearInstant()
+    {
+        StopAllCoroutines();
+        busy = false;
+        items.Clear();
+        for (int i = stackRoot.childCount - 1; i >= 0; i--)
+        {
+            Transform child = stackRoot.GetChild(i);
+            if (child.name.StartsWith("Block")) Destroy(child.gameObject);
+        }
+        nextValue = 1;
+        UpdateMarker();
+    }
+
+    public void Say(string message) { SetStatus(message, Color.white); }
+    public void ResetCodeDisplay() { ShowCode(-1); }
 
     // ---------- Animations ----------
 
-    private IEnumerator PushRoutine()
+    private IEnumerator PushRoutine(int value)
     {
         busy = true;
         int index = items.Count;
-        int value = nextValue++;
         GameObject block = CreateBlock(value, index);
         items.Push((block, value));
         UpdateMarker();
@@ -178,7 +226,6 @@ public class StackController : MonoBehaviour
     {
         GameObject block = Instantiate(blockPrefab, stackRoot);
         block.name = "Block " + value;
-        // Blue -> purple -> pink gradient going up the stack
         Color c = Color.HSVToRGB(Mathf.Repeat(0.55f + index * 0.07f, 1f), 0.6f, 1f);
         block.GetComponent<Renderer>().material.color = c;
         for (int i = 0; i < 4; i++) AddLabel(block.transform, value.ToString(), i * 90f);
@@ -211,13 +258,27 @@ public class StackController : MonoBehaviour
         topMarker.text = items.Count == 0 ? "EMPTY" : "TOP";
     }
 
+    // Shows the message, then the current contents of the stack underneath
     private void SetStatus(string message, Color color)
     {
-        statusText.text = message;
+        statusText.text = message + "\n<color=#8FD3FF>Stack: " + StateString() + "</color>";
         statusText.color = color;
     }
 
-    // Highlights the line of code that matches the current operation
+    private string StateString()
+    {
+        if (items.Count == 0) return "[ ]";
+        var arr = items.ToArray(); // top first
+        var sb = new StringBuilder("[");
+        for (int i = arr.Length - 1; i >= 0; i--)
+        {
+            sb.Append(arr[i].value);
+            if (i > 0) sb.Append(", ");
+        }
+        sb.Append("]  (top on the right)");
+        return sb.ToString();
+    }
+
     private void ShowCode(int activeLine)
     {
         var sb = new StringBuilder();
