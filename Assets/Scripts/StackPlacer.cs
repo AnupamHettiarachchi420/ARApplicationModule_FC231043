@@ -7,11 +7,14 @@ using UnityEngine.XR.ARSubsystems;
 public class StackPlacer : MonoBehaviour
 {
     [SerializeField] private ARRaycastManager raycastManager;
+    [SerializeField] private ARPlaneManager planeManager;
     [SerializeField] private GameObject stackRoot;
     [SerializeField] private GameObject hintPanel;
     [SerializeField] private GameObject controlsPanel;
+    [SerializeField] private bool hidePlanesAfterPlacing = true;
 
     private static readonly List<ARRaycastHit> hits = new();
+    private bool placedOnce;
 
     private void Update()
     {
@@ -26,6 +29,7 @@ public class StackPlacer : MonoBehaviour
 
         Pose pose = hits[0].pose;
         stackRoot.transform.SetPositionAndRotation(pose.position, Quaternion.identity);
+        placedOnce = true;
 
         if (!stackRoot.activeSelf)
         {
@@ -33,5 +37,11 @@ public class StackPlacer : MonoBehaviour
             hintPanel.SetActive(false);
             controlsPanel.SetActive(true);
         }
+    }
+
+    private void LateUpdate()
+    {
+        if (hidePlanesAfterPlacing && placedOnce && planeManager != null)
+            planeManager.SetTrackablesActive(false);
     }
 }

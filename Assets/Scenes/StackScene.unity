@@ -1089,9 +1089,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StackPlacer
   raycastManager: {fileID: 291284931}
+  planeManager: {fileID: 291284929}
   stackRoot: {fileID: 1553886406}
   hintPanel: {fileID: 58598686}
   controlsPanel: {fileID: 401185361}
+  hidePlanesAfterPlacing: 1
 --- !u!1 &348956223
 GameObject:
   m_ObjectHideFlags: 0
