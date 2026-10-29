@@ -57,6 +57,7 @@ extern void U3CPushRoutineU3Ed__32_System_Collections_Generic_IEnumeratorU3CSyst
 extern void U3CPushRoutineU3Ed__32_System_Collections_IEnumerator_Reset_mDE3CB68B5604F6C4497BEC5FA045B40FB03CD158 (void);
 extern void U3CPushRoutineU3Ed__32_System_Collections_IEnumerator_get_Current_m93CDBACDF9C1CC188F8FFC91ED3DBED5C1039AFE (void);
 extern void StackPlacer_Update_m877FB8276CEA681E96171018B6F80838CEE36A9F (void);
+extern void StackPlacer_LateUpdate_m92B36CB1CF08E4A8AFA55766765E03C75F2DEE05 (void);
 extern void StackPlacer__ctor_m4BCA4170073A441B9CF7BEE6D955DA727B564380 (void);
 extern void StackPlacer__cctor_mD2908CB6D24413F2DA75236E71D6CA0CA829364D (void);
 extern void StepController_Start_mD0D48C76FFEE935A779F894B7B269A1B0B25D87B (void);
@@ -87,7 +88,7 @@ extern void TapToPlace__ctor_mD45A31FF1B60C2E0918BB0E60931B2BC0584A044 (void);
 extern void TapToPlace__cctor_m29E54E8AF9AB9E4CA1FE70FD7A601EDFBE856202 (void);
 extern void Readme__ctor_m69C325C4C171DCB0312B646A9034AA91EA8C39C6 (void);
 extern void Section__ctor_m5F732533E4DFC0167D965E5F5DB332E46055399B (void);
-static Il2CppMethodPointer s_methodPointers[80] = 
+static Il2CppMethodPointer s_methodPointers[81] = 
 {
 	ButtonPressEffect_Awake_m33A6A871DA31727B79A9EC21F0C960D92526F0D4,
 	ButtonPressEffect_OnPointerDown_m9D739786F92EDED12B842C367589A6FD6966B93A,
@@ -139,6 +140,7 @@ static Il2CppMethodPointer s_methodPointers[80] =
 	U3CPushRoutineU3Ed__32_System_Collections_IEnumerator_Reset_mDE3CB68B5604F6C4497BEC5FA045B40FB03CD158,
 	U3CPushRoutineU3Ed__32_System_Collections_IEnumerator_get_Current_m93CDBACDF9C1CC188F8FFC91ED3DBED5C1039AFE,
 	StackPlacer_Update_m877FB8276CEA681E96171018B6F80838CEE36A9F,
+	StackPlacer_LateUpdate_m92B36CB1CF08E4A8AFA55766765E03C75F2DEE05,
 	StackPlacer__ctor_m4BCA4170073A441B9CF7BEE6D955DA727B564380,
 	StackPlacer__cctor_mD2908CB6D24413F2DA75236E71D6CA0CA829364D,
 	StepController_Start_mD0D48C76FFEE935A779F894B7B269A1B0B25D87B,
@@ -174,7 +176,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	80,
+	81,
 	s_methodPointers,
 	0,
 	NULL,

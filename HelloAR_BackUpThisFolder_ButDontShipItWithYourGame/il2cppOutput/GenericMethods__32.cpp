@@ -16902,7 +16902,7 @@ IL_003f:
 		return L_12;
 	}
 }
-// Method Definition Index: 62743
+// Method Definition Index: 62744
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectPool_1_tC6F0B8E0BAAEC07474AABA8496261838C79CE1F3* ObjectPoolCreateUtil_Create_TisIl2CppSharedGenericObject_m7A64D03B89671D7542904ED4746691CCB63BB1B8_gshared (int32_t ___0_defaultCapacity, int32_t ___1_maxSize, const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
@@ -16941,7 +16941,7 @@ IL_001f:
 		return L_7;
 	}
 }
-// Method Definition Index: 62744
+// Method Definition Index: 62745
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ObjectPool_1_tC6F0B8E0BAAEC07474AABA8496261838C79CE1F3* ObjectPoolCreateUtil_CreateWithReleaseTrigger_TisIl2CppSharedGenericObject_m517822E2B7E73BC7440D6BE613E48CF7233E9052_gshared (int32_t ___0_defaultCapacity, int32_t ___1_maxSize, const RuntimeMethod* method) 
 {
 	il2cpp_rgctx_method_init(method);
