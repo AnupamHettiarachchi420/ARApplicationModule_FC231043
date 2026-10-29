@@ -69,7 +69,7 @@
           {
             "name": "AudioBehaviour",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -83,7 +83,7 @@
           {
             "name": "AudioListener",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -154,7 +154,7 @@
           {
             "name": "Camera",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -174,7 +174,7 @@
           {
             "name": "Cubemap",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -194,7 +194,7 @@
           {
             "name": "EditorExtension",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -208,7 +208,7 @@
           {
             "name": "GameObject",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -240,7 +240,7 @@
           {
             "name": "LevelGameManager",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -248,7 +248,7 @@
           {
             "name": "Light",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -274,7 +274,7 @@
           {
             "name": "LightmapSettings",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -282,7 +282,7 @@
           {
             "name": "LineRenderer",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -296,7 +296,7 @@
           {
             "name": "Material",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -304,7 +304,7 @@
           {
             "name": "Mesh",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -312,7 +312,7 @@
           {
             "name": "MeshFilter",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -320,7 +320,7 @@
           {
             "name": "MeshRenderer",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -328,7 +328,7 @@
           {
             "name": "MonoBehaviour",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -342,7 +342,7 @@
           {
             "name": "MonoScript",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -350,7 +350,7 @@
           {
             "name": "NamedObject",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 1,
             "icon": null
@@ -387,7 +387,9 @@
           },
           {
             "name": "RectTransform",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/StackScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -400,7 +402,7 @@
           {
             "name": "RenderSettings",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -432,7 +434,7 @@
           {
             "name": "Shader",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -457,7 +459,9 @@
           },
           {
             "name": "Sprite",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/StackScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -517,10 +521,8 @@
           },
           {
             "name": "Transform",
-            "scenes": [
-              "Assets/Scenes/HelloAR.unity"
-            ],
-            "dependencyType": 0,
+            "scenes": [],
+            "dependencyType": 1,
             "icon": null
           },
           {
@@ -1073,7 +1075,15 @@
           {
             "name": "BoxCollider",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "CapsuleCollider",
+            "scenes": [
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1087,7 +1097,7 @@
           {
             "name": "MeshCollider",
             "scenes": [
-              "Assets/Scenes/HelloAR.unity"
+              "Assets/Scenes/StackScene.unity"
             ],
             "dependencyType": 0,
             "icon": null
@@ -1554,7 +1564,9 @@
         "dependencies": [
           {
             "name": "Font",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/StackScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -1606,7 +1618,9 @@
         "dependencies": [
           {
             "name": "Canvas",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/StackScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -1618,7 +1632,9 @@
           },
           {
             "name": "CanvasRenderer",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/StackScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },

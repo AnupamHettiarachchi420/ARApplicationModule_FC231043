@@ -61,6 +61,7 @@ extern void Font_InvokeTextureRebuilt_Internal_m874D1025267C908E5FCD437B41929E4D
 extern void Font_GetDefault_m93A1C993B4D5B93D1F5A334A4F1407B4C1DA4DC6 (void);
 extern void Font_HasCharacter_m71A84FE036055880E1543D79A38FEFA495AD200B (void);
 extern void Font_HasCharacter_mAB838A26F002CB5E4B4DB297F7D6836A28625B18 (void);
+extern void Font_GetPathsToOSFonts_mF2EB5A086E0313B02C22666C9C0E980FE0EB60B8 (void);
 extern void Font_GetOSFallbacks_mB3FE14E050081E45B0855EF5699B0A1D93B17A78 (void);
 extern void Font_Internal_CreateFont_m97CB036BAA033DDAD87E14F9D3493A3A2D9C72B1 (void);
 extern void Font_get_material_Injected_mFD3477FFA6CA61152AC98B142DFE004137D231F7 (void);
@@ -72,7 +73,7 @@ extern void Font_HasCharacter_Injected_mCCBE7842CC556C3C1693FA8148B1928B5321151B
 extern void Font_Internal_CreateFont_Injected_mF2E3FC172619DC195533D2E3D3A7E290091661F8 (void);
 extern void FontTextureRebuildCallback__ctor_m1AF27FC83F3136E493F47015F99CE7A4E6BCA0BC (void);
 extern void FontTextureRebuildCallback_Invoke_m8B52C3F4823ADBB80062209E6BA2B33202AE958D (void);
-static Il2CppMethodPointer s_methodPointers[65] = 
+static Il2CppMethodPointer s_methodPointers[66] = 
 {
 	EmbeddedAttribute__ctor_mCED6CE7A8D963926C3D5EEAFE8051C77C03C5A2A,
 	RefSafetyRulesAttribute__ctor_mF9D3E7F6A1C0CB8F2543AC85623AF45FCE9852AC,
@@ -128,6 +129,7 @@ static Il2CppMethodPointer s_methodPointers[65] =
 	Font_GetDefault_m93A1C993B4D5B93D1F5A334A4F1407B4C1DA4DC6,
 	Font_HasCharacter_m71A84FE036055880E1543D79A38FEFA495AD200B,
 	Font_HasCharacter_mAB838A26F002CB5E4B4DB297F7D6836A28625B18,
+	Font_GetPathsToOSFonts_mF2EB5A086E0313B02C22666C9C0E980FE0EB60B8,
 	Font_GetOSFallbacks_mB3FE14E050081E45B0855EF5699B0A1D93B17A78,
 	Font_Internal_CreateFont_m97CB036BAA033DDAD87E14F9D3493A3A2D9C72B1,
 	Font_get_material_Injected_mFD3477FFA6CA61152AC98B142DFE004137D231F7,
@@ -144,7 +146,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_UnityEngine_TextRenderingModule_Code
 const Il2CppCodeGenModule g_UnityEngine_TextRenderingModule_CodeGenModule = 
 {
 	"UnityEngine.TextRenderingModule.dll",
-	65,
+	66,
 	s_methodPointers,
 	0,
 	NULL,
